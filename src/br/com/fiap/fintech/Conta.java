@@ -30,6 +30,8 @@ public class Conta extends Usuario {
         usuarios.remove(usuario);
     }
 
+    // getters e setters
+
 	public String getNumeroConta() {
         return numeroConta;
     }
