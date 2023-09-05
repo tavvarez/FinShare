@@ -14,6 +14,8 @@ public class ContaInvestimento extends Conta {
         System.out.println("Investimento aplicado para o usuário: " + getNome());
     }
 
+    
+
     public double getRendimentosConta() {
         return rendimentosConta;
     }

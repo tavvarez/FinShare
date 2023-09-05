@@ -15,6 +15,8 @@ public class PessoaJuridica extends Usuario {
         this.endereco = endereco;
     }
 
+    
+
     //getters e setters
     public String getCnpj() {
         return cnpj;

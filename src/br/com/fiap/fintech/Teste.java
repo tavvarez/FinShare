@@ -1,6 +1,7 @@
 package br.com.fiap.fintech;
 
 public class Teste {
+	
 	public static void main(String[] args) {
 
 		// novoUser.setNome("Gabriel");

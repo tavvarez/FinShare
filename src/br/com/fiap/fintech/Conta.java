@@ -18,6 +18,10 @@ public class Conta extends Usuario {
 
 	private List<Usuario> usuarios = new ArrayList<>();
 
+    
+    /** 
+     * @param usuario
+     */
     public void adicionarUsuario(Usuario usuario) {
         usuarios.add(usuario);
     }

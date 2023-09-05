@@ -33,6 +33,8 @@ public class ContaNormal extends Conta {
         System.out.println("Conta Normal aberta para o usuário: " + getNome());
     }
 
+    
+
     public double getSaldoConta() {
         return saldoConta;
     }

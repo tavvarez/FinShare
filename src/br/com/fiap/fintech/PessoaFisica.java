@@ -19,6 +19,7 @@ public class PessoaFisica extends Usuario {
         this.dtNasc = dtNasc;
     }
 
+    
     // getters e setters
     public String getCpf() {
         return cpf;

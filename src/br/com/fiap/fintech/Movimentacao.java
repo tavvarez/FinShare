@@ -36,6 +36,11 @@ public class Movimentacao {
         return tipoMovimentacao;
     }
 
+    
+    /** 
+     * @param dataHora
+     * @return String
+     */
     private String formatarDataHora(LocalDateTime dataHora) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         return dataHora.format(formatter);

@@ -24,6 +24,10 @@ public abstract class Usuario {
 
     private List<Conta> contas = new ArrayList<>();
 
+    
+    /** 
+     * @param conta
+     */
     public void adicionarConta(Conta conta) {
         contas.add(conta);
         conta.adicionarUsuario(this);
@@ -60,7 +64,7 @@ public abstract class Usuario {
             System.out.println("Saldo insuficiente ou valor inválido para retirada.");
         }
     }
-    
+
     /**
      * Consulta o saldo da conta.
      */
