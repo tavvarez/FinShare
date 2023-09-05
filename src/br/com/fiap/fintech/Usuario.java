@@ -60,7 +60,10 @@ public abstract class Usuario {
             System.out.println("Saldo insuficiente ou valor inválido para retirada.");
         }
     }
-
+    
+    /**
+     * Consulta o saldo da conta.
+     */
     public void consultarSaldo() {
         System.out.println("\nSeu saldo atual é: " + saldo);
     }
