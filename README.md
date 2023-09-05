@@ -25,4 +25,4 @@ Enquanto isso, os arquivos de saída compilados serão gerados na pasta `bin` po
 
 ## UML
 
-![Alt text](Fintech.png)
+![!\[Alt text\](Fintech.png)](assets/Fintech.png)
