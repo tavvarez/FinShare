@@ -2,6 +2,9 @@ package br.com.fiap.fintech;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representa uma conta bancária.
+ */
 public class Conta extends Usuario {
 
 	private String numeroConta;
