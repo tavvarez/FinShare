@@ -10,6 +10,12 @@ public class ContaNormal extends Conta {
         this.extratoConta = "";
     }
 
+    /**
+     * Transfere saldo para outra conta.
+     *
+     * @param contaInvestimento A conta de destino.
+     * @param valor        O valor a ser transferido.
+     */
     public void transferirParaContaInvestimento(ContaInvestimento contaInvestimento, double valor) {
         if (valor > 0 && getSaldo() >= valor) {
             retirarSaldo(valor);

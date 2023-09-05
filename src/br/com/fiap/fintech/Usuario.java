@@ -2,7 +2,9 @@ package br.com.fiap.fintech;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Representa um usuário da fintech.
+ */
 public abstract class Usuario {
 	private int idUser;
 	private String password;
@@ -32,6 +34,9 @@ public abstract class Usuario {
         conta.removerUsuario(this);
     }
 
+     /**
+     * Cria um novo usuário.
+     */
     public abstract void createUser();
 
     public void changePassword(String newPassword) {
@@ -97,7 +102,9 @@ public abstract class Usuario {
         return saldo;
     }
 
-	//exibir a ficha do user
+	/**
+     * Exibe informações do usuário.
+     */
 	public void exibeFichaUsuario() {
 		System.out.println("Nome: " + nome);
 		System.out.println("Senha: " + password);
