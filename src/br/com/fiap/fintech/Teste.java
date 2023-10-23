@@ -51,5 +51,9 @@ public class Teste {
 		Movimentacao movimentacao = new Movimentacao("transferência para conta investimento");
 		movimentacao.registrarMovimentacao();
 
+		
+		System.out.println("********************************");
+		System.out.println("CONEXÃO COM O BANCO DE DADOS");
+		
 	}
 }
