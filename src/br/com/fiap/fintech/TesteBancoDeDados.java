@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import br.com.fiap.DAO.UsuarioDAO;
+
 public class TesteBancoDeDados {
 
 	public static void main(String[] args) throws Exception {
@@ -59,6 +61,18 @@ public class TesteBancoDeDados {
 			System.err.println("O driver do DB não foi encontrado!");
 			e.printStackTrace();
 		}
+		
+
+		      UsuarioDAO daoConsulta = new UsuarioDAO(0, null, null, null, null);
+		      
+		      @SuppressWarnings("unused")
+			Object lt = null;
+			java.util.List<UsuarioDAO> lista;
+			lista = daoConsulta.listar();
+		      for (UsuarioDAO item : lista) {
+		        System.out.println(item.getIdUsuario() + " " + item.getNome() + " " + item.getEmail() + " " + item.getSenha() + " " + item.getdataCadastro().getTime());
+		      }
+
 
 	}
 }
