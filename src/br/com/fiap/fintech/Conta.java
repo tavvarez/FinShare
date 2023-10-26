@@ -10,8 +10,8 @@ public class Conta extends Usuario {
 	private String numeroConta;
     private String tipoConta;
 
-	public Conta(int idUser, String password, String email, String nome, String numeroConta, String tipoConta) {
-        super(idUser, password, email, nome);
+	public Conta(int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta) {
+        super(idUser, password, email, nome, sobrenome);
         this.numeroConta = numeroConta;
         this.tipoConta = tipoConta;
     }

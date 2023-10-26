@@ -5,7 +5,7 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		Conta novaConta = new Conta(1, "xxx", "xdxd@null", "Gabriel", "123456", "Corrente");
+		Conta novaConta = new Conta(1, "xxx", "xdxd@null", "Gabriel", "Tavares", "123456", "Corrente");
 
 		novaConta.exibeFichaUsuario();
 		novaConta.adicionarSaldo(500);
@@ -14,8 +14,8 @@ public class App {
 
 		System.out.println("********************************");
 
-		ContaNormal contaNormal = new ContaNormal(1, "xxx", "xdxd@null", "Gabriel", "123456", "Corrente");
-		ContaInvestimento contaInvestimento = new ContaInvestimento(2, "yyy", "xdxd@null", "Gabriel", "789012", "Investimento");
+		ContaNormal contaNormal = new ContaNormal(1, "xxx", "xdxd@null", "Gabriel", "Tavares", "123456", "Corrente");
+		ContaInvestimento contaInvestimento = new ContaInvestimento(2, "yyy", "xdxd@null", "Gabriel", "Tavares", "789012", "Investimento");
 
 		contaNormal.abrirConta();
 		contaInvestimento.aplicarInvestimento();
@@ -25,8 +25,8 @@ public class App {
 
 		System.out.println("********************************");
 
-		PessoaFisica pessoaFisica = new PessoaFisica(2, "xxx", "xdxd@null", "Gabriel", "123.456.789-00", "123456", "Endereço 1", "50/50/1990");
-		PessoaJuridica pessoaJuridica = new PessoaJuridica(3, "yyy", "xdxd@null", "Empresa", "xxxxx", "Endereço 2");
+		PessoaFisica pessoaFisica = new PessoaFisica(2, "xxx", "xdxd@null", "Gabriel", "Tavares", "123.456.789-00", "123456", "Endereço 1", "50/50/1990");
+		PessoaJuridica pessoaJuridica = new PessoaJuridica(3, "yyy", "xdxd@null", "Empresa", "Razão Social", "xxxxx", "Endereço 2");
 
 		pessoaFisica.createUser();
 		pessoaJuridica.createUser();
@@ -35,8 +35,8 @@ public class App {
 
 		System.out.println("********************************");
 
-		ContaNormal contaNormal1 = new ContaNormal(1, "xxx", "xdxd@null", "Gabriel", "123456", "Corrente");
-		ContaInvestimento contaInvestimento2 = new ContaInvestimento(2, "yyy", "xdxd@null", "Gabriel", "789012", "Investimento");
+		ContaNormal contaNormal1 = new ContaNormal(1, "xxx", "xdxd@null", "Gabriel", "Tavares", "123456", "Corrente");
+		ContaInvestimento contaInvestimento2 = new ContaInvestimento(2, "yyy", "xdxd@null", "Gabriel", "Tavares", "789012", "Investimento");
 
 		contaNormal1.adicionarSaldo(1000);
 		contaNormal1.transferirParaContaInvestimento(contaInvestimento, 500);

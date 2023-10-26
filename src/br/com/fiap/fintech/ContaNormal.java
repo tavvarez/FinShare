@@ -4,8 +4,8 @@ public class ContaNormal extends Conta {
     private double saldoConta;
     private String extratoConta;
 
-    public ContaNormal(int idUser, String password, String email, String nome, String numeroConta, String tipoConta) {
-        super(idUser, password, email, nome, numeroConta, tipoConta);
+    public ContaNormal(int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta) {
+        super(idUser, password, email, nome, sobrenome, numeroConta, tipoConta);
         this.saldoConta = 0.0;
         this.extratoConta = "";
     }

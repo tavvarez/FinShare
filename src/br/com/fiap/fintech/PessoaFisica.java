@@ -11,8 +11,8 @@ public class PessoaFisica extends Usuario {
         System.out.println("Usuário Pessoa Física criado: " + getNome());
     }
 
-    public PessoaFisica(int idUser, String password, String email, String nome, String cpf, String rg, String endereco, String dtNasc) {
-        super(idUser, password, email, nome);
+    public PessoaFisica(int idUser, String password, String email, String nome, String sobrenome, String cpf, String rg, String endereco, String dtNasc) {
+        super(idUser, password, email, nome, sobrenome);
         this.cpf = cpf;
         this.rg = rg;
         this.endereco = endereco;

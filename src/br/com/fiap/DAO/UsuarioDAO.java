@@ -16,19 +16,21 @@ public class UsuarioDAO {
 	private String email;
 	private int idUsuario;
 	private String nome;
+	private String sobrenome;
 	private Calendar dataCadastro;
 	private String senha;
 
 
-    public UsuarioDAO(int idUsuario, String nome, String email, String senha, Calendar dataCadastro) {
+    public UsuarioDAO(int idUsuario, String nome, String sobrenome, String email, String senha, Calendar dataCadastro) {
         this.idUsuario = idUsuario;
         this.nome = nome;
+        this.sobrenome = sobrenome;
         this.email = email;
         this.senha = senha;
         this.dataCadastro = dataCadastro;
     }
 
-	public void cadastrarUsuarioDB(Usuario usuario) {
+	public void cadastrarUsuarioDB(Usuario usuario) throws SQLException {
 		PreparedStatement stmt = null;
 
 		try {
@@ -36,7 +38,7 @@ public class UsuarioDAO {
 			String sql = "INSERT INTO T_USUARIO(ID_USUARIO, DS_NOME, DS_SOBRENOME, DS_EMAIL, DS_SENHA, DT_CADASTRO) VALUES (SQ_USUARIO.NEXTVAL, ?, ?, ?, ?, ?)";
 			stmt = conexao.prepareStatement(sql);
 			stmt.setString(1, usuario.getNome()); // Primeiro parâmetro (DS_NOME)
-			stmt.setString(2, "x"); // Segundo parâmetro (DS_SOBRENOME)
+			stmt.setString(2, usuario.getSobrenome()); // Segundo parâmetro (DS_SOBRENOME)
 			stmt.setString(3, usuario.getEmail()); // Terceiro parâmetro (DS_EMAIL)
 			stmt.setString(4, usuario.getPassword()); // Quarto parâmetro (DS_SENHA)
 			java.sql.Date data = new java.sql.Date(new java.util.Date().getTime());
@@ -44,6 +46,8 @@ public class UsuarioDAO {
 
 			stmt.executeUpdate();
 		} catch (SQLException e) {
+			// dar rollback em caso de exceção
+			conexao.rollback();
 			e.printStackTrace();
 		} finally {
 			try {
@@ -55,7 +59,7 @@ public class UsuarioDAO {
 		}
 	}
 	
-	public List<UsuarioDAO> listar() {
+	public List<UsuarioDAO> getAll() {
 	    //Cria uma lista de usuarios
 	    List<UsuarioDAO> lista = new ArrayList<UsuarioDAO>();
 	    PreparedStatement stmt = null;
@@ -69,17 +73,21 @@ public class UsuarioDAO {
 	    while (rs.next()) {
 	    int idUsuario = rs.getInt("ID_USUARIO");
 	    String nome = rs.getString("DS_NOME");
+	    String sobrenome = rs.getString("DS_SOBRENOME");
 	        String email = rs.getString("DS_EMAIL");
 	        String senha = rs.getString("DS_SENHA");
 	        java.sql.Date data = rs.getDate("DT_CADASTRO");
 	        Calendar dataCadastro = Calendar.getInstance();
 	        dataCadastro.setTimeInMillis(data.getTime());
 	        //Cria um objeto novoUsuario com as informações encontradas
-	        UsuarioDAO novoUsuario = new UsuarioDAO(idUsuario, nome, email, senha, dataCadastro);
+	        UsuarioDAO novoUsuario = new UsuarioDAO(idUsuario, nome, sobrenome, email, senha, dataCadastro);
 	        //Adiciona o colaborador na lista
 	        lista.add(novoUsuario);
 	      }
 	    } catch (SQLException e) {
+	    	if (e.getErrorCode() == 942) {
+	    		System.out.printf("Tabela inexistente!", e);
+	    	}
 	      e.printStackTrace();
 	    }finally {
 	      try {
@@ -101,6 +109,11 @@ public class UsuarioDAO {
 	public String getNome() {
 		// TODO Auto-generated method stub
 		return nome;
+	}
+	
+	public String getSobrenome() {
+		// TODO Auto-generated method stub
+		return sobrenome;
 	}
 
 	public String getSenha() {

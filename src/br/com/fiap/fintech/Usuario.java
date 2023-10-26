@@ -10,15 +10,17 @@ public abstract class Usuario {
 	private String password;
 	private String email;
 	private String nome;
+	private String sobrenome;
     private Double saldo;
 
 
     // constructor
-    public Usuario(int idUser, String password, String email, String nome) {
+    public Usuario(int idUser, String password, String email, String nome, String sobrenome) {
         this.idUser = idUser;
         this.password = password;
         this.email = email;
         this.nome = nome;
+        this.sobrenome = sobrenome;
         this.saldo = 0.0;
     }
 
@@ -104,6 +106,14 @@ public abstract class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
 
     public Double getSaldo() {
         return saldo;
@@ -114,6 +124,7 @@ public abstract class Usuario {
      */
 	public void exibeFichaUsuario() {
 		System.out.println("Nome: " + nome);
+		System.out.println("Sobrenome: " + sobrenome);
 		System.out.println("Senha: " + password);
 		System.out.println("E-mail: " + email);
 		System.out.println("ID Usuario: " + idUser);

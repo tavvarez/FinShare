@@ -9,8 +9,8 @@ public class PessoaJuridica extends Usuario {
         System.out.println("Usuário Pessoa Jurídica criado: " + getNome());
     }
 
-    public PessoaJuridica(int idUser, String password, String email, String nome, String cnpj, String endereco) {
-        super(idUser, password, email, nome);
+    public PessoaJuridica(int idUser, String password, String email, String nome, String sobrenome, String cnpj, String endereco) {
+        super(idUser, password, email, nome, sobrenome);
         this.cnpj = cnpj;
         this.endereco = endereco;
     }

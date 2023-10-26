@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Teste {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws SQLException {
 
 		// novoUser.setNome("Gabriel");
 		// novoUser.setEmail("xdxd@null");
@@ -67,18 +67,18 @@ public class Teste {
 		System.out.println("********************************");
 		System.out.println("CONEXÃO COM O BANCO DE DADOS");
 		
-//		UsuarioDAO dao = new UsuarioDAO(0, null, null, null, null);
-//		
-//		PessoaFisica usuarioDB = new PessoaFisica(0, "123456", "gabrieldaraujotavares@gmail.com", "Gabriel", null, null, null, null);
-//		
-//		dao.cadastrarUsuarioDB(usuarioDB);
-//		System.out.println("Usuário cadastrado no DB");
+		UsuarioDAO dao = new UsuarioDAO(0, null, null, null, null, null);
 		
-		UsuarioDAO daoConsulta = new UsuarioDAO(0, null, null, null, null);
-        List<UsuarioDAO> lista = daoConsulta.listar();
+		PessoaFisica usuarioDB = new PessoaFisica(0, "123456", "gabrieldaraujotavares@gmail.com", "Gabriel", "Tavares", null, null, null, null);
+		
+		dao.cadastrarUsuarioDB(usuarioDB);
+		System.out.println("Usuário cadastrado no DB");
+		
+		UsuarioDAO daoConsulta = new UsuarioDAO(0, null, null, null, null, null);
+        List<UsuarioDAO> lista = daoConsulta.getAll();
         
         for (UsuarioDAO item : lista) {
-            System.out.println(item.getIdUsuario() + " " + item.getNome() + " " + item.getEmail() + " " + item.getSenha() + " " + item.getdataCadastro().getTime());
+            System.out.println(item.getIdUsuario() + " " + item.getNome() + " " + item.getSobrenome() + " " + item.getEmail() + " " + item.getSenha() + " " + item.getdataCadastro().getTime());
         }
 		
 	}
