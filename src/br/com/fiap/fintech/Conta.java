@@ -9,12 +9,17 @@ public class Conta extends Usuario {
 
 	private String numeroConta;
     private String tipoConta;
+    private int idConta;
+    private int idUser;
+	private Double saldo;
 
-	public Conta(int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta) {
+	public Conta(int idConta, int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta, Double saldo) {
         super(idUser, password, email, nome, sobrenome);
         this.numeroConta = numeroConta;
         this.tipoConta = tipoConta;
+        this.saldo = saldo;
     }
+
 
 	private List<Usuario> usuarios = new ArrayList<>();
 
@@ -48,9 +53,25 @@ public class Conta extends Usuario {
         this.tipoConta = tipoConta;
     }
 
-    @Override
+    public int getIdConta() {
+		return idConta;
+	}
+    
+    public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdConta(int idConta) {
+		this.idConta = idConta;
+	}
+
+	@Override
     public void createUser() {
         System.out.println("Conta criada para o usuário: " + getNome());
     }
+
+	public Double getSaldo() {
+		return saldo;
+	}
 
 }

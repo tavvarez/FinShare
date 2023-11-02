@@ -1,6 +1,7 @@
 package br.com.fiap.fintech;
 
 import br.com.fiap.DAO.UsuarioDAO;
+import br.com.fiap.DAO.ContaDAO;
 import br.com.fiap.DAO.FinShareDBManager;
 
 import java.sql.Connection;
@@ -64,21 +65,42 @@ public class Teste {
 //		movimentacao.registrarMovimentacao();
 
 		
-		System.out.println("********************************");
+//		System.out.println("********************************");
+//		System.out.println("CONEXÃO COM O BANCO DE DADOS");
+//		
+//		UsuarioDAO dao = new UsuarioDAO(0, null, null, null, null, null);
+//		
+//		PessoaFisica usuarioDB = new PessoaFisica(0, "123456", "gabrieldaraujotavares@gmail.com", "Gabriel", "Tavares", null, null, null, null);
+//		
+//		dao.cadastrarUsuarioDB(usuarioDB);
+//		System.out.println("Usuário cadastrado no DB");
+//		
+//		UsuarioDAO daoConsulta = new UsuarioDAO(0, null, null, null, null, null);
+//        List<UsuarioDAO> lista = daoConsulta.getAll();
+//        
+//        for (UsuarioDAO item : lista) {
+//            System.out.println(item.getIdUsuario() + " " + item.getNome() + " " + item.getSobrenome() + " " + item.getEmail() + " " + item.getSenha() + " " + item.getdataCadastro().getTime());
+//        }
+//        
+        
+        System.out.println("********************************");
 		System.out.println("CONEXÃO COM O BANCO DE DADOS");
 		
-		UsuarioDAO dao = new UsuarioDAO(0, null, null, null, null, null);
 		
-		PessoaFisica usuarioDB = new PessoaFisica(0, "123456", "gabrieldaraujotavares@gmail.com", "Gabriel", "Tavares", null, null, null, null);
+		ContaDAO contaDAO = new ContaDAO(0, 0, null, null, null);
 		
-		dao.cadastrarUsuarioDB(usuarioDB);
-		System.out.println("Usuário cadastrado no DB");
 		
-		UsuarioDAO daoConsulta = new UsuarioDAO(0, null, null, null, null, null);
-        List<UsuarioDAO> lista = daoConsulta.getAll();
+		Conta contaDB = new Conta(0, 0, null, null, null, null, "Conta 1234", "Conta Corrente", 156.580);
+		
+		contaDAO.adicionarContaUsuario(contaDB);
+		System.out.println("Conta cadastrada no DB");
+		
+	
+		ContaDAO daoConsulta = new ContaDAO(0, 0, null, null, null);
+        List<ContaDAO> lista = daoConsulta.getAll();
         
-        for (UsuarioDAO item : lista) {
-            System.out.println(item.getIdUsuario() + " " + item.getNome() + " " + item.getSobrenome() + " " + item.getEmail() + " " + item.getSenha() + " " + item.getdataCadastro().getTime());
+        for (ContaDAO item : lista) {
+            System.out.println(item.getIdUser() + " " + item.getIdConta() + " " + item.getNumeroConta() + " " + item.getTipoConta() + " " + item.getSaldo());
         }
 		
 	}

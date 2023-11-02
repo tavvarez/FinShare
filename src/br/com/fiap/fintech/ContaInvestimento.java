@@ -4,8 +4,8 @@ public class ContaInvestimento extends Conta {
     private double rendimentosConta;
     private String extratoInvestimento;
 
-    public ContaInvestimento(int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta) {
-        super(idUser, password, email, nome, sobrenome, numeroConta, tipoConta);
+    public ContaInvestimento(int idConta, int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta) {
+        super(idConta, idUser, password, email, nome, sobrenome, numeroConta, tipoConta);
         this.rendimentosConta = 0.0;
         this.extratoInvestimento = "";
     }

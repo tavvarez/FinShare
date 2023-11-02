@@ -9,6 +9,7 @@ public class FinShareDBManager {
 	public static Connection realizarConexao() throws SQLException {
 
 		Connection conexao = null;
+		
 
 		try {
 			// define o driver
@@ -18,6 +19,7 @@ public class FinShareDBManager {
 			// definida para acesso ao banco
 			conexao = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl", "RM97958",
 					"050298");
+			conexao.setAutoCommit(false);
 
 			// Exceção de driver não encontrado
 		} catch (ClassNotFoundException e) {
