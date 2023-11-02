@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Representa uma conta bancária.
  */
-public class Conta extends Usuario {
+public class Conta {
 
 	private String numeroConta;
     private String tipoConta;
@@ -13,11 +13,19 @@ public class Conta extends Usuario {
     private int idUser;
 	private Double saldo;
 
-	public Conta(int idConta, int idUser, String password, String email, String nome, String sobrenome, String numeroConta, String tipoConta, Double saldo) {
-        super(idUser, password, email, nome, sobrenome);
+	public Conta(int idConta, int idUser, String numeroConta, String tipoConta, Double saldo) {
         this.numeroConta = numeroConta;
         this.tipoConta = tipoConta;
         this.saldo = saldo;
+        this.idUser = idUser;
+        this.idConta = idConta;
+    }
+	
+	public Conta(int idUser, String numeroConta, String tipoConta, Double saldo) {
+        this.numeroConta = numeroConta;
+        this.tipoConta = tipoConta;
+        this.saldo = saldo;
+        this.idUser = idUser;
     }
 
 
@@ -65,11 +73,11 @@ public class Conta extends Usuario {
 		this.idConta = idConta;
 	}
 
-	@Override
-    public void createUser() {
-        System.out.println("Conta criada para o usuário: " + getNome());
-    }
-
+//	@Override
+//    public void createUser() {
+//        System.out.println("Conta criada para o usuário: " + getNome());
+//    }
+//
 	public Double getSaldo() {
 		return saldo;
 	}

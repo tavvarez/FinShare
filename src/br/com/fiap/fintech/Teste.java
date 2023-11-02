@@ -87,21 +87,21 @@ public class Teste {
 		System.out.println("CONEXÃO COM O BANCO DE DADOS");
 		
 		
-		ContaDAO contaDAO = new ContaDAO(0, 0, null, null, null);
+		ContaDAO contaDAO = new ContaDAO();
 		
 		
-		Conta contaDB = new Conta(0, 0, null, null, null, null, "Conta 1234", "Conta Corrente", 156.580);
+		Conta contaEntity = new Conta(104, "11234", "Conta Poup", 156.580);
 		
-		contaDAO.adicionarContaUsuario(contaDB);
+		contaDAO.adicionarContaUsuario(contaEntity);
 		System.out.println("Conta cadastrada no DB");
 		
 	
-		ContaDAO daoConsulta = new ContaDAO(0, 0, null, null, null);
-        List<ContaDAO> lista = daoConsulta.getAll();
-        
-        for (ContaDAO item : lista) {
-            System.out.println(item.getIdUser() + " " + item.getIdConta() + " " + item.getNumeroConta() + " " + item.getTipoConta() + " " + item.getSaldo());
-        }
-		
+//		ContaDAO daoConsulta = new ContaDAO();
+//        List<ContaDAO> lista = daoConsulta.getAll();
+//        
+//        for (ContaDAO item : lista) {
+//            System.out.println(item.getIdUser() + " " + item.getIdConta() + " " + item.getNumeroConta() + " " + item.getTipoConta() + " " + item.getSaldo());
+//        }
+//		
 	}
 }
