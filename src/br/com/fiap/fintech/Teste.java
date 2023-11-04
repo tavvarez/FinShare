@@ -3,6 +3,7 @@ package br.com.fiap.fintech;
 import br.com.fiap.DAO.UsuarioDAO;
 import br.com.fiap.DAO.ContaDAO;
 import br.com.fiap.DAO.FinShareDBManager;
+import br.com.fiap.DAO.MovimentacaoDAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -83,17 +84,17 @@ public class Teste {
 //        }
 //        
         
-        System.out.println("********************************");
-		System.out.println("CONEXÃO COM O BANCO DE DADOS");
+//        System.out.println("********************************");
+//		System.out.println("CONEXÃO COM O BANCO DE DADOS");
 		
 		
-		ContaDAO contaDAO = new ContaDAO();
+//		ContaDAO contaDAO = new ContaDAO();
 		
 		
-		Conta contaEntity = new Conta(104, "11234", "Conta Poup", 156.580);
-		
-		contaDAO.adicionarContaUsuario(contaEntity);
-		System.out.println("Conta cadastrada no DB");
+//		Conta contaEntity = new Conta(104, "11234", "Conta Poup", 156.580);
+//		
+//		contaDAO.adicionarContaUsuario(contaEntity);
+//		System.out.println("Conta cadastrada no DB");
 		
 	
 //		ContaDAO daoConsulta = new ContaDAO();
@@ -103,5 +104,17 @@ public class Teste {
 //            System.out.println(item.getIdUser() + " " + item.getIdConta() + " " + item.getNumeroConta() + " " + item.getTipoConta() + " " + item.getSaldo());
 //        }
 //		
+		System.out.println("********************************");
+		System.out.println("CONEXÃO COM O BANCO DE DADOS");
+		
+		
+		MovimentacaoDAO movimentacaoDAO = new MovimentacaoDAO();
+		
+		
+		Movimentacao moviEntity = new Movimentacao(100.5, null, 2);
+		
+		movimentacaoDAO.movimentacaoConta(moviEntity);
+		System.out.println("Transacao cadastrada no DB");
+		
 	}
 }

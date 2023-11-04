@@ -15,7 +15,7 @@ public class FinShareDBManager {
 			// define o driver
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 
-			// Interface JDBC cuja implementação DriveManager abre uma conexão com a URL
+			// Interface JDBC que abre uma conexão com a URL
 			// definida para acesso ao banco
 			conexao = DriverManager.getConnection("jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl", "RM97958",
 					"050298");

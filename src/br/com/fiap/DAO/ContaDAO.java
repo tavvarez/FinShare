@@ -12,15 +12,6 @@ public class ContaDAO {
 	private Connection conexao;
 
     
-//	public ContaDAO(int idConta, int idUser, String numeroConta, String tipoConta, Double saldo) {
-//		 this.numeroConta = numeroConta;
-//	     this.tipoConta = tipoConta;;
-//	     this.idUser = idUser;
-//	     this.idConta = idConta;
-//	     this.saldo = saldo;
-//    }
-    
-    
 	
 	public ContaDAO() {
 		

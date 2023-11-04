@@ -29,6 +29,11 @@ public class Conta {
     }
 
 
+	public Conta() {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	private List<Usuario> usuarios = new ArrayList<>();
 
     
@@ -62,6 +67,10 @@ public class Conta {
     }
 
     public int getIdConta() {
+		return idConta;
+	}
+    
+    public int setIdConta() {
 		return idConta;
 	}
     
