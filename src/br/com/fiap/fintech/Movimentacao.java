@@ -23,17 +23,19 @@ public class Movimentacao {
         this.valor = valor;
     }
 
-     public Movimentacao(double d, Object object, int i) {
-		
+     public Movimentacao(double valor, Object object, int idUser) {
+    	 this.valor = valor;
+    	 this.idUser = idUser;
 	}
      
-     public Movimentacao(double valor, Conta conta, int idConta) {
+     public Movimentacao(double valor, Conta conta, int idConta, int idUser) {
     	    this.valor = valor;
 //    	    this.conta = conta;
     	    this.idConta = idConta;
+    	    this.idUser = idUser;
     	}
      
-     public Movimentacao(double valor, int idConta) {
+     public Movimentacao(double valor, int idConta, int idUser) {
     	 
      }
      
@@ -78,10 +80,46 @@ public class Movimentacao {
     
     Conta contaMovimentacao = new Conta(); // Cria uma instância de Conta
     int idConta = getIdConta();
+    double saldo = getSaldo();
+    int idUser = getIdUser();
+    double valores = getValor();
 
     
     public int getIdConta() {
 		return idConta;
 	}
+    
+    public int getIdUser() {
+		return idUser;
+	}
+
+	private double getSaldo() {
+		return saldo;
+	}
+
+	public void adicionarSaldo(double valor) {
+        if (valor > 0) {
+            this.saldo += valor;
+            System.out.println("Depósito de R$" + valor + " realizado com sucesso.");
+        } else {
+            System.out.println("Valor inválido para depósito.");
+        }
+    }
+
+    public void retirarSaldo(double valor) {
+        if (valor > 0 && valor <= this.saldo) {
+            this.saldo -= valor;
+            System.out.println("Retirada de R$ " + valor + " realizada com sucesso.");
+        } else {
+            System.out.println("Saldo insuficiente ou valor inválido para retirada.");
+        }
+    }
+
+    /**
+     * Consulta o saldo da conta.
+     */
+    public void consultarSaldo() {
+        System.out.println("\nSeu saldo atual é: " + saldo);
+    }
     
 }

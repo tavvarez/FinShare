@@ -111,10 +111,12 @@ public class Teste {
 		MovimentacaoDAO movimentacaoDAO = new MovimentacaoDAO();
 		
 		
-		Movimentacao moviEntity = new Movimentacao(100.5, null, 2);
+		Movimentacao moviEntity = new Movimentacao(100, null, 11);
 		
-		movimentacaoDAO.movimentacaoConta(moviEntity);
-		System.out.println("Transacao cadastrada no DB");
+//		movimentacaoDAO.movimentacaoConta(moviEntity);
+		movimentacaoDAO.delDespesaConta(moviEntity);
+		System.out.println("Transação cadastrada no DB");
+		System.out.println("Despesa cadastrada no DB");
 		
 	}
 }
